@@ -1,0 +1,79 @@
+﻿@model IEnumerable<AbcRetail.Models.CustomerEntity>
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold text-primary">Customer List</h2>
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Add New Customer
+        </a>
+    </div>
+
+    <table class="table table-hover shadow-sm rounded">
+        <thead class="table-dark">
+            <tr>
+                <th>FullName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Created</th>
+                <th style="width:150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.FullName</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Phone</td>
+                    
+                    <td>
+                        <a asp-action="Details" asp-route-id="@customer.RowKey" class="btn btn-sm btn-info">Details</a>
+                        <a asp-action="Edit" asp-route-id="@customer.RowKey" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@customer.RowKey" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+      
+<style>
+    body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2.text-primary, h2.text-danger {
+    font-weight: 700;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.btn-lg {
+    min-width: 120px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+</style>

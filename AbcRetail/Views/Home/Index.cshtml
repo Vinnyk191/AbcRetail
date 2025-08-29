@@ -1,0 +1,77 @@
+﻿<!----
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+---->
+<!--
+@{
+    ViewData["Title"] = "Home";
+}
+<h1>ABC Retail - Azure Storage Demo</h1>
+
+<p>
+    This demo shows Products stored in Azure Tables, product images in Blob Storage,
+    orders placed into Azure Queue, and logs written to Azure File Share.
+</p>
+
+<p>
+    <a class="btn btn-primary" href="/Products">Manage Products</a>
+    <a class="btn btn-secondary" href="/Orders/Create">Create Order</a>
+</p>
+---->
+@{
+    ViewData["Title"] = "ABC Retail";
+}
+
+<div class="container my-5">
+    <div class="jumbotron p-5 bg-light rounded shadow-sm text-center">
+        <h1 class="display-4 mb-4">ABC Retail - E-Commerce</h1>
+        <p class="lead mb-4">
+            This Demo showcases an e-commerce system using Azure Storage services:
+        </p>
+        <ul class="list-unstyled mb-4">
+            <li>📦 Products stored in Azure Tables</li>
+            <li>🖼 Product images in Azure Blob Storage</li>
+            <li>📝 Orders placed into Azure Queue</li>
+            <li>📁 Logs written to Azure File Share</li>
+        </ul>
+
+        <div class="d-flex justify-content-center gap-3">
+            <a class="btn btn-primary btn-lg shadow-sm" href="/Products">
+                Manage Products
+            </a>
+            <a class="btn btn-success btn-lg shadow-sm" href="/Orders/Create">
+                Create Order
+            </a>
+            <a class="btn btn-info btn-lg shadow-sm" href="/Logs">
+                View Logs
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        background-color: darkslategrey;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .jumbotron {
+        background: linear-gradient(to right, #ffffff, #e9ecef);
+    }
+
+    .btn-lg {
+        min-width: 180px;
+        font-weight: 600;
+        transition: transform 0.2s;
+    }
+
+        .btn-lg:hover {
+            transform: translateY(-2px);
+        }
+
+</style>

@@ -1,0 +1,82 @@
+﻿@model AbcRetail.Models.ViewModels.ProductCreateViewModels
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div class="container my-5">
+    <div class="card shadow-sm p-4 rounded">
+        <h2 class="text-primary mb-4">Create Product</h2>
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter product description"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Price" class="form-label"></label>
+                    <input asp-for="Price" class="form-control" placeholder="0.00" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Stock" class="form-label"></label>
+                    <input asp-for="Stock" class="form-control" placeholder="0" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Image" class="form-label">Product Image</label>
+                <input asp-for="Image" type="file" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg shadow-sm">Create Product</button>
+            <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm ms-2">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<style>
+    body {
+        background-color: #1034a6;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2.text-primary {
+        font-weight: 700;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 12px;
+    }
+
+    .btn-lg {
+        min-width: 150px;
+        font-weight: 600;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .btn-lg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    textarea.form-control {
+        resize: none;
+    }
+
+</style>

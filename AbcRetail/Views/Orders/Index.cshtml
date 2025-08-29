@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string> 
+
+<h2>Orders</h2>
+
+@if (Model.Any())
+{
+    <ul>
+    @foreach (var order in Model)
+    {
+        <li>@order</li>
+    }
+    </ul>
+}
+else
+{
+    <p>No orders found.</p>
+}

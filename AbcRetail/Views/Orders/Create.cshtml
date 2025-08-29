@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Create Order";
+}
+
+<div class="container my-5">
+    <div class="card shadow-sm p-4 rounded">
+        <h2 class="text-primary mb-4">Create Order</h2>
+
+        <form method="post" asp-action="Create">
+            <div class="mb-3">
+                <label for="customerId" class="form-label">Customer ID</label>
+                <input type="text" name="customerId" id="customerId" class="form-control" placeholder="Enter Customer ID" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="productId" class="form-label">Product ID</label>
+                <input type="text" name="productId" id="productId" class="form-control" placeholder="Enter Product ID" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="form-control" value="1" min="1" required />
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success btn-lg shadow-sm">Place Order</button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    body {
+        background-color: #008000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2.text-primary {
+        font-weight: 700;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 12px;
+    }
+
+    .btn-lg {
+        min-width: 140px;
+        font-weight: 600;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .btn-lg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+</style>
