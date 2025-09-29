@@ -2,6 +2,7 @@
 using Azure;
 using Microsoft.Extensions.Options;
 using Azure.Storage.Files.Shares.Models;
+using AbcRetail.Models;
 
 namespace AbcRetail.Services
 {

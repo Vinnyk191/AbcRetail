@@ -1,4 +1,5 @@
 using AbcRetail.AzureDemo.Services;
+using AbcRetail.Models;
 using AbcRetail.Services; //  Make sure your services namespace is correct
 using AbcRetailServices;
 using Microsoft.AspNetCore.Builder;

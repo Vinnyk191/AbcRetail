@@ -88,7 +88,7 @@ namespace AbcRetail.Services
 
         public CustomerTableService(IOptions<AzureStorageOptions> options)
         {
-            var tableName = options.Value.TableCustomers;
+            var tableName = options.Value.TableNameCustomers;
             var connectionString = options.Value.ConnectionString;
 
             _tableClient = new TableClient(connectionString, tableName);

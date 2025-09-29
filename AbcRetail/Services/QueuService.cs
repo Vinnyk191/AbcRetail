@@ -1,4 +1,5 @@
-﻿using AbcRetail.Services;
+﻿using AbcRetail.Models;
+using AbcRetail.Services;
 using Azure.Storage.Queues;
 using Azure.Storage.Queues.Models;
 using Microsoft.Extensions.Options;

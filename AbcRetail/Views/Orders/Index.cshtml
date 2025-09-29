@@ -1,17 +1,42 @@
-﻿@model IEnumerable<string> 
+﻿@model IEnumerable<AbcRetail.Models.OrderMessage>
 
-<h2>Orders</h2>
+@{
+    ViewData["Title"] = "Orders";
+}
 
-@if (Model.Any())
-{
-    <ul>
-    @foreach (var order in Model)
-    {
-        <li>@order</li>
-    }
-    </ul>
-}
-else
-{
-    <p>No orders found.</p>
-}
+<h1 class="mb-4">Orders</h1>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.CustomerId</td>
+                    <td>@order.ProductId</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.OrderDate.ToString("yyyy-MM-dd HH:mm")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-muted">No orders found</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Create New Order</a>

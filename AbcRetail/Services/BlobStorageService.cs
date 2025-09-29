@@ -1,4 +1,5 @@
-﻿using AbcRetail.Services;
+﻿using AbcRetail.Models;
+using AbcRetail.Services;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Options;

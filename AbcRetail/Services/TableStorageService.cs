@@ -19,8 +19,8 @@ namespace AbcRetailServices
         {
             _opts = options.Value;
             var conn = _opts.ConnectionString;
-            _customersTable = new TableClient(conn, _opts.TableCustomers);
-            _productsTable = new TableClient(conn, _opts.TableProducts);
+            _customersTable = new TableClient(conn, _opts.TableNameCustomers);
+            _productsTable = new TableClient(conn, _opts.TableNameProducts);
 
             EnsureTablesCreatedAsync().GetAwaiter().GetResult();
         }
