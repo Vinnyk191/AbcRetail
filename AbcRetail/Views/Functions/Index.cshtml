@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Azure Functions Dashboard";
+}
+
+<h2 class="mb-4">Azure Functions Dashboard</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert @(ViewBag.Success ? "alert-success" : "alert-danger")">
+        @ViewBag.Message
+    </div>
+}
+
+<div class="d-grid gap-3">
+    <a class="btn btn-primary" href="/Functions/StoreToTable">Store to Azure Table</a>
+    <a class="btn btn-secondary" href="/Functions/UploadToBlob">Upload to Blob Storage</a>
+    <a class="btn btn-info" href="/Functions/EnqueueTransaction">Enqueue Transaction</a>
+    <a class="btn btn-dark" href="/Functions/WriteToFileShare">Write to File Share</a>
+</div>

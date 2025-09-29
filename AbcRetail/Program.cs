@@ -11,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllersWithViews();
+
+//Register HttpClient
+builder.Services.AddHttpClient();
+
+// Register AzureStorageOption
 builder.Services.Configure<AzureStorageOptions>(builder.Configuration.GetSection("AzureStorage"));
 
 //  Register services correctly (interface -> implementation)

@@ -45,7 +45,7 @@ namespace AbcRetail.Services
         {
             // 
            // Split the path into directory and filename
-            var directoryPath = Path.GetDirectoryName(pathWithinShare).Replace("\\", "/");
+            var directoryPath = Path.GetDirectoryName(pathWithinShare).Replace("\\", "/"); 
             var fileName = Path.GetFileName(pathWithinShare);
 
             // Ensure directory exists

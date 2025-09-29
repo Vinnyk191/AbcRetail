@@ -30,6 +30,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Logs" asp-action="Index">Logs</a>
                         </li>
+
+                        <!-- NEW: Links to Function Features -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="storageDropdown" role="button" data-bs-toggle="dropdown">
+                                Azure Functions
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Functions" asp-action="StoreToTable">Store to Table</a></li>
+                                <li><a class="dropdown-item" asp-controller="Functions" asp-action="UploadToBlob">Upload to Blob</a></li>
+                                <li><a class="dropdown-item" asp-controller="Functions" asp-action="EnqueueTransaction">Queue Transaction</a></li>
+                                <li><a class="dropdown-item" asp-controller="Functions" asp-action="WriteToFileShare">Write to File Share</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
